@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.CheckBox.Styled
+{
+	color : #333333;
+	font : 17px "Arial";
+	-nexa-icon : url('imagerc::checkbox_default.png');
+	-nexa-text-padding : 0px 0px 0px 10px;
+	box-shadow : 0px 0px 5px #ffffff;
+	border-radius : 3px;
+	-nexa-border : 1px none #ffffff;
+	opacity : 1.00;
+}
+.CheckBox.Styled[status=disabled]
+{
+	color : #9b9b9b;
+	font : 17px "Arial";
+	-nexa-icon : url('imagerc::checkbox_disabled.png');
+	-nexa-text-padding : 0px 0px 0px 10px;
+}
+.CheckBox.Styled[status=mouseover]
+{
+	color : #333333;
+	font : 17px "Arial";
+	-nexa-icon : url('imagerc::checkbox_hover.png');
+	-nexa-text-padding : 0px 0px 0px 10px;
+}
+.CheckBox.Styled[userstatus=selected]
+{
+	color : #333333;
+	font : 17px "Arial";
+	-nexa-icon : url('imagerc::checkbox_checked.png');
+	-nexa-text-padding : 0px 0px 0px 10px;
+}
+]]></XCSS>

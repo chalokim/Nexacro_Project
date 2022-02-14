@@ -1,0 +1,2744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="EMP_Management_HQ" width="1020" height="660" titletext="사원관리 HQ" onload="EMP_Management_HQ_onload">
+    <Layouts>
+      <Layout height="660" mobileorientation="landscape" width="1020" stepcount="2">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="10" bottom="10" width="210" positionstep="1">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="   이 름 " left="9" top="9" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01" taborder="1" left="59" top="9" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00" taborder="2" text="   직 위" left="9" top="59" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00" taborder="3" left="59" top="59" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00" taborder="4" text=" 이 메 일" left="9" top="109" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00" taborder="5" left="59" top="109" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00_00" taborder="6" text="   휴대    전화번호" left="9" top="159" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00_00" taborder="7" left="59" top="159" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00_00_00" taborder="8" text="   회사    전화번호" left="9" top="209" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00_00_00" taborder="9" left="59" top="209" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_01" taborder="10" text="  조 직1" left="9" top="259" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue" onclick="Div00_Static00_01_onclick"/>
+              <Static id="Static01_01" taborder="11" left="59" top="259" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_01" taborder="12" text="  조 직2" left="9" top="309" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_01" taborder="13" left="59" top="309" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00_01" taborder="14" text="  조 직3" left="9" top="359" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00_01" taborder="15" left="59" top="359" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00_00_01" taborder="16" text="  조 직4" left="9" top="409" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00_00_01" taborder="17" left="59" top="409" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Static id="Static00_00_00_00_00_00" taborder="18" text="사용 여부" left="9" top="459" width="50" height="50" background="aqua" font="normal 8pt/normal &quot;굴림&quot;" border="1px solid cornflowerblue"/>
+              <Static id="Static01_00_00_00_00_00" taborder="19" left="59" top="459" width="140" height="50" background="aliceblue" border="1px solid cornflowerblue" font="normal 10pt/normal 굴림"/>
+              <Button id="bt_Reset" taborder="20" text="초 기 화" left="9" width="71" height="35" bottom="21" onclick="Div00_bt_Reset_onclick"/>
+              <Button id="bt_Confirm_Edit" taborder="26" text="등록 / 수정" width="80" height="35" right="9" bottom="21" onclick="Div00_bt_Confirm_Edit_onclick"/>
+              <Combo id="cb_Position" taborder="22" left="64" top="71" width="130" height="26" innerdataset="ds_GRD" datacolumn="GRD_NAME" codecolumn="GRD_ID"/>
+              <Combo id="cb_Department_1" taborder="27" left="64" top="271" width="130" height="26" innerdataset="innerdataset" datacolumn="datacolumn" codecolumn="codecolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">10</Col>
+                      <Col id="datacolumn">생산/영업/개발</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">30</Col>
+                      <Col id="datacolumn">경영전략</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">50</Col>
+                      <Col id="datacolumn">김포생산</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Combo id="cb_Department_2" taborder="28" left="64" top="319" width="130" height="26" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">1001</Col>
+                      <Col id="datacolumn">구매팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1002</Col>
+                      <Col id="datacolumn">해외영업팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1003</Col>
+                      <Col id="datacolumn">ESGS</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1004</Col>
+                      <Col id="datacolumn">BIMI</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1005</Col>
+                      <Col id="datacolumn">REMC</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1006</Col>
+                      <Col id="datacolumn">ECTC</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1007</Col>
+                      <Col id="datacolumn">DIDP</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1008</Col>
+                      <Col id="datacolumn">DISC</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1009</Col>
+                      <Col id="datacolumn">MICO</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1010</Col>
+                      <Col id="datacolumn">ALMA</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1011</Col>
+                      <Col id="datacolumn">VINA</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1012</Col>
+                      <Col id="datacolumn">SCOUT</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3030</Col>
+                      <Col id="datacolumn">인사총무부</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3031</Col>
+                      <Col id="datacolumn">아토판지아사업부</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3032</Col>
+                      <Col id="datacolumn">FORB USA</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3033</Col>
+                      <Col id="datacolumn">경영지원부</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">5050</Col>
+                      <Col id="datacolumn">생산부</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">5051</Col>
+                      <Col id="datacolumn">신소재개발팀</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Combo id="cb_Department_3" taborder="29" left="64" top="369" width="130" height="26" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">100301</Col>
+                      <Col id="datacolumn">경영지원</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">100302</Col>
+                      <Col id="datacolumn">통합창고</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">100303</Col>
+                      <Col id="datacolumn">ERP</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303030</Col>
+                      <Col id="datacolumn">인사총무팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303031</Col>
+                      <Col id="datacolumn">비서팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303132</Col>
+                      <Col id="datacolumn">포브팀/젠틀우프</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303133</Col>
+                      <Col id="datacolumn">제품개발팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303134</Col>
+                      <Col id="datacolumn">인수스/스쿨백</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303135</Col>
+                      <Col id="datacolumn">물류/CS팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303136</Col>
+                      <Col id="datacolumn">경영지원팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303337</Col>
+                      <Col id="datacolumn">재경팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303338</Col>
+                      <Col id="datacolumn">무역팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">303339</Col>
+                      <Col id="datacolumn">전산팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">505050</Col>
+                      <Col id="datacolumn">관리팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">505051</Col>
+                      <Col id="datacolumn">사출팀</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">505052</Col>
+                      <Col id="datacolumn">압출팀</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Combo id="cb_Department_4" taborder="30" left="64" top="419" width="130" height="26"/>
+              <Combo id="cb_UseYN" taborder="31" left="64" top="471" width="130" height="26" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" onitemchanged="Div00_cb_UseYN_onitemchanged">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">Y</Col>
+                      <Col id="datacolumn">true</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">N</Col>
+                      <Col id="datacolumn">false</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Edit id="txt_Name" taborder="21" left="64" top="21" width="130" height="26" onchanged="Div00_txt_Name_onchanged"/>
+              <Edit id="txt_Email" taborder="23" left="64" top="121" width="130" height="26"/>
+              <Edit id="txt_Phone" taborder="24" left="64" top="176" width="130" height="26"/>
+              <Edit id="txt_IP_Phone" taborder="25" left="64" top="221" width="130" height="26"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Grid id="Grid00" taborder="1" left="230" right="20" bottom="80" top="10" binddataset="ds_EMP_INFO" selecttype="area" autofittype="col" autosizebandtype="body" autosizingtype="row" cellexprupdatecondition="none" positionstep="1" cellsizingtype="col">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="95"/>
+                <Column size="110"/>
+                <Column size="128"/>
+                <Column size="123"/>
+                <Column size="129"/>
+                <Column size="158"/>
+                <Column size="151"/>
+                <Column size="146"/>
+                <Column size="155"/>
+                <Column size="123"/>
+                <Column size="153"/>
+                <Column size="149"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="이 름"/>
+                <Cell col="1" text="이 메 일"/>
+                <Cell col="2" text="휴대 전화번호"/>
+                <Cell col="3" text="회사 전화번호"/>
+                <Cell col="4" text="EMP_GRD_ID"/>
+                <Cell col="5" text="EMP_DEPARTMENT1"/>
+                <Cell col="6" text="EMP_DEPARTMENT2"/>
+                <Cell col="7" text="EMP_DEPARTMENT3"/>
+                <Cell col="8" text="EMP_DEPARTMENT4"/>
+                <Cell col="9" text="EMP_USE_YN"/>
+                <Cell col="10" text="EMP_INPUT_DATE"/>
+                <Cell col="11" text="EMP_EDIT_DATE"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:EMP_NAME"/>
+                <Cell col="1" text="bind:EMP_EMAIL"/>
+                <Cell col="2" text="bind:EMP_PHONE" textAlign="center"/>
+                <Cell col="3" text="bind:EMP_IP_PHONE" textAlign="center"/>
+                <Cell col="4" text="bind:GRD_ID" combocodecol="GRD_ID" combodatacol="GRD_NAME" combodataset="ds_GRD"/>
+                <Cell col="5" text="bind:EMP_DEPARTMENT1" combodataset="ds_DEPARTMENT" combodatacol="DEPARTMENT_NAME" combocodecol="DPT_PARENT_IDS" textAlign="center"/>
+                <Cell col="6" text="bind:EMP_DEPARTMENT2" combodataset="ds_DEPARTMENT" combodatacol="DEPARTMENT_NAME" combocodecol="DPT_PARENT_IDS" textAlign="center"/>
+                <Cell col="7" text="bind:EMP_DEPARTMENT3" combodataset="ds_DEPARTMENT" combodatacol="DEPARTMENT_NAME" combocodecol="DPT_PARENT_IDS" textAlign="center"/>
+                <Cell col="8" text="bind:EMP_DEPARTMENT4" textAlign="center"/>
+                <Cell col="9" text="bind:EMP_USE_YN" displaytype="normal" edittype="none"/>
+                <Cell col="10" text="bind:EMP_INPUT_DATE" textAlign="center"/>
+                <Cell col="11" text="bind:EMP_EDIT_DATE" textAlign="center"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid01" taborder="2" left="753" top="10" width="207" height="510" binddataset="Dataset00" oncellclick="Grid01_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="211"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell displaytype="treeitemcontrol" edittype="tree" treelevel="bind:LEVEL" text="bind:DEPARTMENT_NAME"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Edit id="txt_SearchEmployee" taborder="3" height="40" positionstep="1" onkeyup="txt_SearchEmployee_onkeyup" bottom="27" width="361" left="230"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[include "DOIT::gridCopyPaste.xjs"; // 복사/붙이기 기능 스크립트 파일참조
+include "DOIT::gridsort.xjs";
+
+this.EMP_Management_HQ_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	/*row, multi row type의 경우 오류가 발생할 수 있습니다.*/
+	
+	var objConfig = {
+						objGrid : this.Grid00,
+						strMarkType		: "text",
+						ascMark			: "▲",
+						descMark		: "▼",
+						multikey		: ""
+					}			
+	this.fnSetGridCopyPaste(obj, objConfig);
+	
+	/*
+	 grid 정렬 관련 옵션 설정
+	 1. objGrid -> Grid component
+	 -- Grid Head 에 정렬 상태를 표시할 텍스트 또는 이미지 경로 지정
+	 2. strMarkType -> 소팅 표시자 구분 (text or image)	default : "text"
+	 3. ascMark		-> 오름차순표시	default : "▲"
+	 4. descMark	-> 내림차순표시	default : "▼"
+	 5. multikey	-> multi sort 키 선택 defult : "all : shift & ctrl " , "shift", "ctrl"
+	*/
+	
+	var objForm = obj;
+	this.fnInitForm(objForm,objConfig);
+};
+
+this.Div00_bt_Confirm_Edit_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.ds_EMP_INFO.addRow()
+// 	var nRow = this.ds_EMP_INFO.rowposition;
+// 	this.ds_EMP_INFO.setColumn(nRow, "EMP_NAME", this.txt_Name.value);
+// 	this.ds_EMP_INFO.setColumn(nRow, "EMP_EMAIL", this.txt_Email.value);
+// 	this.ds_EMP_INFO.setColumn(nRow, "EMP_PHONE", this.txt_Phone.value);
+// 	this.ds_EMP_INFO.setColumn(nRow, "EMP_IP_PHONE", this.txt_IP_Phone.value);
+}
+
+
+this.bt_Delete_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	let arrSelectedRow = this.Grid00.getSelectedDatasetRows();
+	this.ds_EMP_INFO.deleteMultiRows(arrSelectedRow)
+	alert("삭제");
+};
+
+
+
+this.txt_Search_onchanged = function(obj:nexacro.Edit,e:nexacro.ChangeEventInfo)
+{
+// 	var strCategory = this.cb_Search.value;
+// 	var strKeyword = this.txt_Search.value;
+// 	
+// 	trace("strCategory: " + strCategory + ", " + "strKeyword: " + strKeyword);
+// 	
+// 	var nRow = this.ds_EMP_INFO.findRow(strCategory, strKeyword);
+// 	
+// 	trace("nRow: " + nRow);
+// 	
+// 	this.Grid00.selectRow(nRow, true);
+// 	
+// 	if(nRow == -1)
+// 		alert("\"" + strKeyword + strCategory + "\" not found.");
+
+};
+
+this.Div00_bt_Reset_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+		this.Div00.form.txt_Name.set_value("");
+
+};
+
+this.txt_SearchEmployee_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+		if(e.keycode == 13)
+	{
+		trace(this.ds_EMP_INFO.findRow("EMP_NAME", obj.value));
+		this.ds_EMP_INFO.set_rowposition(this.ds_EMP_INFO.findRow("EMP_NAME", obj.value));
+	}
+};
+]]></Script>
+    <Objects>
+      <Dataset id="ds_EMP_INFO">
+        <ColumnInfo>
+          <Column id="EMP_NAME" type="STRING" size="10"/>
+          <Column id="EMP_EMAIL" type="STRING" size="30"/>
+          <Column id="EMP_PHONE" type="STRING" size="20"/>
+          <Column id="EMP_IP_PHONE" type="STRING" size="20"/>
+          <Column id="GRD_ID" type="STRING" size="1"/>
+          <Column id="EMP_DEPARTMENT1" type="STRING" size="50"/>
+          <Column id="EMP_DEPARTMENT2" type="STRING" size="50"/>
+          <Column id="EMP_DEPARTMENT3" type="STRING" size="50"/>
+          <Column id="EMP_DEPARTMENT4" type="STRING" size="50"/>
+          <Column id="EMP_USE_YN" type="STRING" size="3"/>
+          <Column id="EMP_INPUT_DATE" type="DATETIME" size="20"/>
+          <Column id="EMP_EDIT_DATE" type="DATETIME" size="20"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMP_NAME">강동욱</Col>
+            <Col id="EMP_EMAIL">dwkang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3854-8344</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5842</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-11-08 9:30</Col>
+            <Col id="EMP_EDIT_DATE">2021-11-08 8:47</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">강민곤</Col>
+            <Col id="EMP_EMAIL">mgkang@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-967-261-5068</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3774</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:07</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">강정흠</Col>
+            <Col id="EMP_EMAIL">jhkang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4140-7642</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4621</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">고광훈</Col>
+            <Col id="EMP_EMAIL">khko@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5240-6801</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4506</Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-24 9:43</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">공은하</Col>
+            <Col id="EMP_EMAIL">ehgong@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7126-2764</Col>
+            <Col id="EMP_IP_PHONE">070-7525-4355</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303134</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김경섭</Col>
+            <Col id="EMP_EMAIL">kskim80@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-639-1364</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4560</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김광연</Col>
+            <Col id="EMP_EMAIL">kykim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3264-1270</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4242</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김덕영</Col>
+            <Col id="EMP_EMAIL">dykim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7455-1753</Col>
+            <Col id="EMP_IP_PHONE">031-8048-9026</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303135</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김마루</Col>
+            <Col id="EMP_EMAIL">mrkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4848-8551</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4689</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김민규</Col>
+            <Col id="EMP_EMAIL">mgkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2338-3538</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4630</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505050</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김민우</Col>
+            <Col id="EMP_EMAIL">mwkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9375-0858</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4062</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303030</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:05</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김상남</Col>
+            <Col id="EMP_EMAIL">snkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4225-0876</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5003</Col>
+            <Col id="GRD_ID">F</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-20 8:41</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김상준</Col>
+            <Col id="EMP_EMAIL">kimsj@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7759-7193</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5842</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303134</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김서용</Col>
+            <Col id="EMP_EMAIL">sykim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4807-2925</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4604</Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김세준</Col>
+            <Col id="EMP_EMAIL">sjkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2021-4463</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4606</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303338</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-01 11:16</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김수혁</Col>
+            <Col id="EMP_EMAIL">shkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9097-6794</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4535</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303339</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김영민</Col>
+            <Col id="EMP_EMAIL">ymkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-906-299-3845</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4545</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1012</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김우주</Col>
+            <Col id="EMP_EMAIL">wjkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2898-4398</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4608</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:08</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김원빈</Col>
+            <Col id="EMP_EMAIL">wbkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-915-692-5535</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4237</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1003</Col>
+            <Col id="EMP_DEPARTMENT3">100302</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-29 9:08</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김윤겸</Col>
+            <Col id="EMP_EMAIL">ykkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2511-5529</Col>
+            <Col id="EMP_IP_PHONE">070-7525-5920</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김정섭</Col>
+            <Col id="EMP_EMAIL">jskim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3695-4363</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505051</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김정인</Col>
+            <Col id="EMP_EMAIL">jikim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-6205-0829</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5790</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303134</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김정환</Col>
+            <Col id="EMP_EMAIL">jhkim92@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7735-7292</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4571</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">70</Col>
+            <Col id="EMP_DEPARTMENT2">7071</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김준</Col>
+            <Col id="EMP_EMAIL">kimj@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4944-3873</Col>
+            <Col id="EMP_IP_PHONE">070-7525-5288</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303131</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김지환</Col>
+            <Col id="EMP_EMAIL">jihkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9854-9980</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5921</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김지훈</Col>
+            <Col id="EMP_EMAIL">jhkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5416-8027</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4620</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505050</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김진욱</Col>
+            <Col id="EMP_EMAIL">jwkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-977-625-7153</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4554</Col>
+            <Col id="GRD_ID">C</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1003</Col>
+            <Col id="EMP_DEPARTMENT3">100301</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김진현</Col>
+            <Col id="EMP_EMAIL">kimjh@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3578-9397</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5005</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:08</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김진형</Col>
+            <Col id="EMP_EMAIL">jhkim89@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5393-3662</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4529</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303338</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김창준</Col>
+            <Col id="EMP_EMAIL">cjkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4582-5011</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4468</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303339</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-10-01 13:23</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김태석</Col>
+            <Col id="EMP_EMAIL">tskim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2047-2729</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4538</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-09 12:12</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김태오</Col>
+            <Col id="EMP_EMAIL">tokim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-255-7570</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4203</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1013</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김태훈</Col>
+            <Col id="EMP_EMAIL">thkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7258-0223</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4523      </Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303338</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김필만</Col>
+            <Col id="EMP_EMAIL">pmkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-906-511-3951</Col>
+            <Col id="EMP_IP_PHONE">070-4099-1637</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1008</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-11-12 11:43</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김형기</Col>
+            <Col id="EMP_EMAIL">hgkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-956-745-4770</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3773</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김호정</Col>
+            <Col id="EMP_EMAIL">hjkim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-905-252-7980</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3772</Col>
+            <Col id="GRD_ID">C</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1008</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">김효식</Col>
+            <Col id="EMP_EMAIL">hskim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-917-243-7844</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4466</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">노재현</Col>
+            <Col id="EMP_EMAIL">jhnoe@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-966-251-5688</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4530</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1006</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">도민해</Col>
+            <Col id="EMP_EMAIL">mhdo@dong-in.com</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5180</Col>
+            <Col id="GRD_ID">B</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">NULL</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">류승일</Col>
+            <Col id="EMP_EMAIL">silyu@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7734-7050</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5004</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">문성희</Col>
+            <Col id="EMP_EMAIL">shmoon@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8567-5136</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505052</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박기원</Col>
+            <Col id="EMP_EMAIL">kwpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-967-261-5090</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3774</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:07</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박기정</Col>
+            <Col id="EMP_EMAIL">kjpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">                   </Col>
+            <Col id="EMP_IP_PHONE">070-4099-4631</Col>
+            <Col id="GRD_ID">B</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">NULL</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박민준</Col>
+            <Col id="EMP_EMAIL">mjpark87@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3443-8717</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5926</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-29 9:08</Col>
+            <Col id="EMP_EDIT_DATE">2021-12-29 9:08</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박민진</Col>
+            <Col id="EMP_EMAIL">mjpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8892-4357</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505052</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박성빈</Col>
+            <Col id="EMP_EMAIL">sbpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9883-1076</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4580</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박시온</Col>
+            <Col id="EMP_EMAIL">sopark@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-966-223-5347</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3783</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1003</Col>
+            <Col id="EMP_DEPARTMENT3">100303</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박재민</Col>
+            <Col id="EMP_EMAIL">jmpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9504-3406</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4215</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박정민</Col>
+            <Col id="EMP_EMAIL">jmpark9228@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7410-9228</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505052</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박진경</Col>
+            <Col id="EMP_EMAIL">jkpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4282-0076</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5924</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303136</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:05</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박해웅</Col>
+            <Col id="EMP_EMAIL">parkhw@dong-in.com</Col>
+            <Col id="EMP_PHONE">84-98-805-8110</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4623</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박현우</Col>
+            <Col id="EMP_EMAIL">hwpark@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2725-7454</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5181</Col>
+            <Col id="GRD_ID">E</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">박형</Col>
+            <Col id="EMP_EMAIL">phyeong@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-967-261-5117</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4572</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1005</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">방문재</Col>
+            <Col id="EMP_EMAIL">mjbang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8864-3447</Col>
+            <Col id="EMP_IP_PHONE">070-7525-5164</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">변지영</Col>
+            <Col id="EMP_EMAIL">jybyun@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8712-3625</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5918</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">변진현</Col>
+            <Col id="EMP_EMAIL">jhbyun@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8695-0108</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4524</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303338</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">서지은</Col>
+            <Col id="EMP_EMAIL">jeseo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2958-3032</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4691</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">서진혁</Col>
+            <Col id="EMP_EMAIL">jhseo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7166-4430</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4620</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505050</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">서호준</Col>
+            <Col id="EMP_EMAIL">hjseo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9555-5516</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4533</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">100101</Col>
+            <Col id="EMP_DEPARTMENT4">10010102</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">서효원</Col>
+            <Col id="EMP_EMAIL">hwseo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5381-4035</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4537</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-09 12:13</Col>
+            <Col id="EMP_EDIT_DATE">2021-10-13 8:44</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">성연황</Col>
+            <Col id="EMP_EMAIL">yhsung@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8266-5702</Col>
+            <Col id="EMP_IP_PHONE">031-8048-9024</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303134</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:05</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">손민성</Col>
+            <Col id="EMP_EMAIL">msson@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9174-3126</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4510</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303030</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-10-19 15:34</Col>
+            <Col id="EMP_EDIT_DATE">2021-10-19 15:34</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">신원섭</Col>
+            <Col id="EMP_EMAIL">wsshin@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-906-511-3947</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3770</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1007</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">안영욱</Col>
+            <Col id="EMP_EMAIL">yuan@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3522-8307</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4500</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">안창호</Col>
+            <Col id="EMP_EMAIL">chahn@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4166-0166</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4529</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">안태현</Col>
+            <Col id="EMP_EMAIL">thane@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8966-9333</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4517</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">100101</Col>
+            <Col id="EMP_DEPARTMENT4">10010101</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">양영목</Col>
+            <Col id="EMP_EMAIL">ymyang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2499-3041</Col>
+            <Col id="EMP_IP_PHONE">031-8048-9076</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505051</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">양요한</Col>
+            <Col id="EMP_EMAIL">yhyang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3234-4081</Col>
+            <Col id="EMP_IP_PHONE">                    </Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-24 9:41</Col>
+            <Col id="EMP_EDIT_DATE">2021-12-24 9:41</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">양혜지</Col>
+            <Col id="EMP_EMAIL">hjyang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5653-1811</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5925</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303136</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">오현석</Col>
+            <Col id="EMP_EMAIL">hsoh@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3150-8937</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4203</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1012</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-11-08 8:51</Col>
+            <Col id="EMP_EDIT_DATE">2021-11-08 8:51</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">우상진</Col>
+            <Col id="EMP_EMAIL">sjwoo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9882-7655</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303030</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">원영재</Col>
+            <Col id="EMP_EMAIL">yjwon@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3832-4260</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4537</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">100101</Col>
+            <Col id="EMP_DEPARTMENT4">10010101</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">유길수</Col>
+            <Col id="EMP_EMAIL">ksyu@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5647-5538</Col>
+            <Col id="EMP_IP_PHONE">                    </Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505051</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:09</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">유초희</Col>
+            <Col id="EMP_EMAIL">chyoo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5003-6876</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4520</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">윤영대</Col>
+            <Col id="EMP_EMAIL">ydyoon@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-905-486-1196</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4590</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">100404</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">윤준영</Col>
+            <Col id="EMP_EMAIL">jyyoon@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4613-0995</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4610</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505050</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">윤태형</Col>
+            <Col id="EMP_EMAIL">thyun@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-977-427-9507</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4693</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">100405</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이건호</Col>
+            <Col id="EMP_EMAIL">khlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5570-6869</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4538</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:09</Col>
+            <Col id="EMP_EDIT_DATE">2021-10-13 8:46</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이경배</Col>
+            <Col id="EMP_EMAIL">kblee@dong-in.com</Col>
+            <Col id="EMP_PHONE">84-98-112-8714</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4627</Col>
+            <Col id="GRD_ID">F</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:04</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이경훈</Col>
+            <Col id="EMP_EMAIL">leekh@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3876-6540</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3773</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이백구</Col>
+            <Col id="EMP_EMAIL">bklee@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-915-419-8203</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4548</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:00</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이병환</Col>
+            <Col id="EMP_EMAIL">bhlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2959-8562</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5841</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303134</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이석준</Col>
+            <Col id="EMP_EMAIL">sjlee2@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9503-9082</Col>
+            <Col id="EMP_IP_PHONE">031-8048-9025</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303135</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이석준</Col>
+            <Col id="EMP_EMAIL">sjlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-6420-5065</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4514</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이선국</Col>
+            <Col id="EMP_EMAIL">sglee@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-975-9127</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4528</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1003</Col>
+            <Col id="EMP_DEPARTMENT3">100302</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이영식</Col>
+            <Col id="EMP_EMAIL">yslee@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-975-9115</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4543</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1003</Col>
+            <Col id="EMP_DEPARTMENT3">100301</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이예나</Col>
+            <Col id="EMP_EMAIL">ynlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5524-4154</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5843</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-11-30 14:55</Col>
+            <Col id="EMP_EDIT_DATE">2021-11-30 14:55</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이인열</Col>
+            <Col id="EMP_EMAIL">iylee@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-916-386-3306</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4204</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1012</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:09</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이인지</Col>
+            <Col id="EMP_EMAIL">ijlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3281-8106</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4521</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이장익</Col>
+            <Col id="EMP_EMAIL">jakleeee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2272-2541</Col>
+            <Col id="EMP_IP_PHONE">                    </Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-20 0:41</Col>
+            <Col id="EMP_EDIT_DATE">2021-12-20 0:38</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이종국</Col>
+            <Col id="EMP_EMAIL">jklee@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-995-205-8739</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4559</Col>
+            <Col id="GRD_ID">E</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1007</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:04</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이종욱</Col>
+            <Col id="EMP_EMAIL">jwlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-6224-8506</Col>
+            <Col id="EMP_IP_PHONE">                    </Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2021-12-09 12:09</Col>
+            <Col id="EMP_EDIT_DATE">2021-12-09 12:09</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이진숙</Col>
+            <Col id="EMP_EMAIL">jslee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5542-1205</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4502</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이찬우</Col>
+            <Col id="EMP_EMAIL">cwlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2310-3804</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이채원</Col>
+            <Col id="EMP_EMAIL">cwlee96@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5135-7482</Col>
+            <Col id="EMP_IP_PHONE">070-8664-1413</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303031</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이형걸</Col>
+            <Col id="EMP_EMAIL">hglee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2076-5805</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4688</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">이호만</Col>
+            <Col id="EMP_EMAIL">hmlee@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3290-9262</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4239</Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">임승현</Col>
+            <Col id="EMP_EMAIL">shlim@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-967-261-5029</Col>
+            <Col id="EMP_IP_PHONE">070-4099-1635</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1008</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:09</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">임초롱</Col>
+            <Col id="EMP_EMAIL">crlim@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9286-9008</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4609</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">장교진</Col>
+            <Col id="EMP_EMAIL">kjjang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8360-9887</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4508</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">장동훈</Col>
+            <Col id="EMP_EMAIL">dhjang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9935-8526</Col>
+            <Col id="EMP_IP_PHONE">070-4099-9095</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505051</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">장우석</Col>
+            <Col id="EMP_EMAIL">wsjang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3756-1611</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">장종훈</Col>
+            <Col id="EMP_EMAIL">jhjang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2843-5402</Col>
+            <Col id="EMP_IP_PHONE">070-7525-5006</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">전시응</Col>
+            <Col id="EMP_EMAIL">sejun@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-906-554-6500</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3781</Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">100404</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정민웅</Col>
+            <Col id="EMP_EMAIL">mwjeong@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3935-1352</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4605</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303030</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정성윤</Col>
+            <Col id="EMP_EMAIL">syjung@dong-in.com</Col>
+            <Col id="EMP_PHONE">84-16-5907-1913</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4626</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1011</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정성희</Col>
+            <Col id="EMP_EMAIL">shjung@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4586-4589</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4539</Col>
+            <Col id="GRD_ID">C</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">NULL</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정연욱</Col>
+            <Col id="EMP_EMAIL">ywjung@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8642-1866</Col>
+            <Col id="EMP_IP_PHONE">070-4099-3784</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505051</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정윤석</Col>
+            <Col id="EMP_EMAIL">tiojung@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-7700-2222</Col>
+            <Col id="EMP_IP_PHONE">                    </Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3032</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:03</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정윤환</Col>
+            <Col id="EMP_EMAIL">yjung@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3244-8880</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4531</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정인수</Col>
+            <Col id="EMP_EMAIL">isjung@dong-in.com</Col>
+            <Col id="EMP_PHONE">                   </Col>
+            <Col id="EMP_IP_PHONE">070-8664-1411</Col>
+            <Col id="GRD_ID">A</Col>
+            <Col id="EMP_DEPARTMENT1">1</Col>
+            <Col id="EMP_DEPARTMENT2">NULL</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">정주영</Col>
+            <Col id="EMP_EMAIL">jyjeong@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3636-4012</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4522</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303030</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">주영웅</Col>
+            <Col id="EMP_EMAIL">ywjoo@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9175-4792</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5919</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">지경남</Col>
+            <Col id="EMP_EMAIL">knji@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8913-0601</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">진용해</Col>
+            <Col id="EMP_EMAIL">yhjin@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-967-273-4941</Col>
+            <Col id="EMP_IP_PHONE">070-4808-3782</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1009</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">차승준</Col>
+            <Col id="EMP_EMAIL">sjcha@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4448-3228</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4061</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303337</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:06</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">채상익</Col>
+            <Col id="EMP_EMAIL">sichae@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-6267-0219</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4690</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303132</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">채정우</Col>
+            <Col id="EMP_EMAIL">jwchae@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-2310-3804</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1005</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">천관영</Col>
+            <Col id="EMP_EMAIL">kycheon@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4725-5384</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4532</Col>
+            <Col id="GRD_ID">F</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3033</Col>
+            <Col id="EMP_DEPARTMENT3">303339</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-05 12:04</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최기호</Col>
+            <Col id="EMP_EMAIL">ghchoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-917-950-2134</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4585</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1009</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최도삼</Col>
+            <Col id="EMP_EMAIL">dschoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-499-7377</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4596</Col>
+            <Col id="GRD_ID">E</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1006</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최도삼</Col>
+            <Col id="EMP_EMAIL">callawayorder@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-917-325-4245</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4596</Col>
+            <Col id="GRD_ID">E</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1006</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최두연</Col>
+            <Col id="EMP_EMAIL">dychoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-8886-5003</Col>
+            <Col id="EMP_IP_PHONE">070-8664-1412</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3030</Col>
+            <Col id="EMP_DEPARTMENT3">303031</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최승연</Col>
+            <Col id="EMP_EMAIL">choisy@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-4093-6796</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5922</Col>
+            <Col id="GRD_ID">M</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최연수</Col>
+            <Col id="EMP_EMAIL">yschoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9606-8680</Col>
+            <Col id="EMP_IP_PHONE">070-4099-5923</Col>
+            <Col id="GRD_ID">N</Col>
+            <Col id="EMP_DEPARTMENT1">30</Col>
+            <Col id="EMP_DEPARTMENT2">3031</Col>
+            <Col id="EMP_DEPARTMENT3">303133</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최인석</Col>
+            <Col id="EMP_EMAIL">ischoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-945-407-0410</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4591</Col>
+            <Col id="GRD_ID">I</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">2022-01-06 9:00</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">최현선</Col>
+            <Col id="EMP_EMAIL">hschoi@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-977-013-7763</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4613</Col>
+            <Col id="GRD_ID">E</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1005</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">필감박</Col>
+            <Col id="EMP_EMAIL">gbphil@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-9158-2322</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4527</Col>
+            <Col id="GRD_ID">F</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">한은민</Col>
+            <Col id="EMP_EMAIL">emhan@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3321-4313</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4538</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1001</Col>
+            <Col id="EMP_DEPARTMENT3">100101</Col>
+            <Col id="EMP_DEPARTMENT4">10010101</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">한철희</Col>
+            <Col id="EMP_EMAIL">chhan@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-995-230-8994</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4515</Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1004</Col>
+            <Col id="EMP_DEPARTMENT3">100403</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">한철희(겸)</Col>
+            <Col id="EMP_EMAIL">chhan@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-995-230-8994</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4694</Col>
+            <Col id="GRD_ID">D</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1002</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">현도빈</Col>
+            <Col id="EMP_EMAIL">dbhyun@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-3719-5464</Col>
+            <Col id="EMP_IP_PHONE">031-8048-9080</Col>
+            <Col id="GRD_ID">H</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5051</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">홍원기</Col>
+            <Col id="EMP_EMAIL">wkhong@dong-in.com</Col>
+            <Col id="EMP_PHONE">63-995-649-1405</Col>
+            <Col id="EMP_IP_PHONE">070-4099-4594</Col>
+            <Col id="GRD_ID">K</Col>
+            <Col id="EMP_DEPARTMENT1">10</Col>
+            <Col id="EMP_DEPARTMENT2">1010</Col>
+            <Col id="EMP_DEPARTMENT3">NULL</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">N</Col>
+            <Col id="EMP_INPUT_DATE">2021-11-08 8:40</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+          <Row>
+            <Col id="EMP_NAME">황선봉</Col>
+            <Col id="EMP_EMAIL">sbhwang@dong-in.com</Col>
+            <Col id="EMP_PHONE">010-5476-8869</Col>
+            <Col id="EMP_IP_PHONE">                   </Col>
+            <Col id="GRD_ID">J</Col>
+            <Col id="EMP_DEPARTMENT1">50</Col>
+            <Col id="EMP_DEPARTMENT2">5050</Col>
+            <Col id="EMP_DEPARTMENT3">505052</Col>
+            <Col id="EMP_DEPARTMENT4">NULL</Col>
+            <Col id="EMP_USE_YN">Y</Col>
+            <Col id="EMP_INPUT_DATE">NULL</Col>
+            <Col id="EMP_EDIT_DATE">NULL</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_GRD">
+        <ColumnInfo>
+          <Column id="GRD_ID" type="STRING" size="1"/>
+          <Column id="GRD_NAME" type="STRING" size="20"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="GRD_ID">A</Col>
+            <Col id="GRD_NAME">대표이사님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">B</Col>
+            <Col id="GRD_NAME">부사장님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">C</Col>
+            <Col id="GRD_NAME">전무님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">D</Col>
+            <Col id="GRD_NAME">상무님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">E</Col>
+            <Col id="GRD_NAME">이사님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">F</Col>
+            <Col id="GRD_NAME">이사대우님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">G</Col>
+            <Col id="GRD_NAME">실장님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">H</Col>
+            <Col id="GRD_NAME">고문님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">I</Col>
+            <Col id="GRD_NAME">부장님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">J</Col>
+            <Col id="GRD_NAME">차장님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">K</Col>
+            <Col id="GRD_NAME">과장님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">M</Col>
+            <Col id="GRD_NAME">대리님</Col>
+          </Row>
+          <Row>
+            <Col id="GRD_ID">N</Col>
+            <Col id="GRD_NAME">사원님</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_DEPARTMENT">
+        <ColumnInfo>
+          <Column id="DPT_PARENT_IDS" type="STRING" size="10"/>
+          <Column id="DEPARTMENT_NAME" type="STRING" size="30"/>
+          <Column id="LEVEL" type="STRING" size="2"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DPT_PARENT_IDS">10</Col>
+            <Col id="DEPARTMENT_NAME">생산/영업/개발</Col>
+            <Col id="LEVEL">1-1</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">30</Col>
+            <Col id="DEPARTMENT_NAME">경영전략</Col>
+            <Col id="LEVEL">1-2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">50</Col>
+            <Col id="DEPARTMENT_NAME">김포생산</Col>
+            <Col id="LEVEL">1-3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1001</Col>
+            <Col id="DEPARTMENT_NAME">구매팀</Col>
+            <Col id="LEVEL">2-1</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1002</Col>
+            <Col id="DEPARTMENT_NAME">해외영업팀</Col>
+            <Col id="LEVEL">2-2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1003</Col>
+            <Col id="DEPARTMENT_NAME">ESGS</Col>
+            <Col id="LEVEL">2-3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1004</Col>
+            <Col id="DEPARTMENT_NAME">BIMI</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1005</Col>
+            <Col id="DEPARTMENT_NAME">REMC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1006</Col>
+            <Col id="DEPARTMENT_NAME">ECTC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1007</Col>
+            <Col id="DEPARTMENT_NAME">DIDP</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1008</Col>
+            <Col id="DEPARTMENT_NAME">DISC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1009</Col>
+            <Col id="DEPARTMENT_NAME">MICO</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1010</Col>
+            <Col id="DEPARTMENT_NAME">ALMA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1011</Col>
+            <Col id="DEPARTMENT_NAME">VINA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1012</Col>
+            <Col id="DEPARTMENT_NAME">SCOUT</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3030</Col>
+            <Col id="DEPARTMENT_NAME">인사총무부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3031</Col>
+            <Col id="DEPARTMENT_NAME">아토판지아사업부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3032</Col>
+            <Col id="DEPARTMENT_NAME">FORB USA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3033</Col>
+            <Col id="DEPARTMENT_NAME">경영지원부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">5050</Col>
+            <Col id="DEPARTMENT_NAME">생산부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">5051</Col>
+            <Col id="DEPARTMENT_NAME">신소재개발팀</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100301</Col>
+            <Col id="DEPARTMENT_NAME">경영지원</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100302</Col>
+            <Col id="DEPARTMENT_NAME">통합창고</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100303</Col>
+            <Col id="DEPARTMENT_NAME">ERP</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303030</Col>
+            <Col id="DEPARTMENT_NAME">인사총무팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303031</Col>
+            <Col id="DEPARTMENT_NAME">비서팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303132</Col>
+            <Col id="DEPARTMENT_NAME">포브팀/젠틀우프</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303133</Col>
+            <Col id="DEPARTMENT_NAME">제품개발팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303134</Col>
+            <Col id="DEPARTMENT_NAME">인수스/스쿨백</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303135</Col>
+            <Col id="DEPARTMENT_NAME">물류/CS팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303136</Col>
+            <Col id="DEPARTMENT_NAME">경영지원팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303337</Col>
+            <Col id="DEPARTMENT_NAME">재경팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303338</Col>
+            <Col id="DEPARTMENT_NAME">무역팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303339</Col>
+            <Col id="DEPARTMENT_NAME">전산팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505050</Col>
+            <Col id="DEPARTMENT_NAME">관리팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505051</Col>
+            <Col id="DEPARTMENT_NAME">사출팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505052</Col>
+            <Col id="DEPARTMENT_NAME">압출팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="DPT_PARENT_IDS" type="STRING" size="10"/>
+          <Column id="DEPARTMENT_NAME" type="STRING" size="30"/>
+          <Column id="LEVEL" type="STRING" size="2"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DPT_PARENT_IDS">10</Col>
+            <Col id="DEPARTMENT_NAME">생산/영업/개발</Col>
+            <Col id="LEVEL">1</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1001</Col>
+            <Col id="DEPARTMENT_NAME">구매팀</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1002</Col>
+            <Col id="DEPARTMENT_NAME">해외영업팀</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1003</Col>
+            <Col id="DEPARTMENT_NAME">ESGS</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100301</Col>
+            <Col id="DEPARTMENT_NAME">경영지원</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100302</Col>
+            <Col id="DEPARTMENT_NAME">통합창고</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">100303</Col>
+            <Col id="DEPARTMENT_NAME">ERP</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1004</Col>
+            <Col id="DEPARTMENT_NAME">BIMI</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1005</Col>
+            <Col id="DEPARTMENT_NAME">REMC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1006</Col>
+            <Col id="DEPARTMENT_NAME">ECTC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1007</Col>
+            <Col id="DEPARTMENT_NAME">DIDP</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1008</Col>
+            <Col id="DEPARTMENT_NAME">DISC</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1009</Col>
+            <Col id="DEPARTMENT_NAME">MICO</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1010</Col>
+            <Col id="DEPARTMENT_NAME">ALMA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1011</Col>
+            <Col id="DEPARTMENT_NAME">VINA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">1012</Col>
+            <Col id="DEPARTMENT_NAME">SCOUT</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">30</Col>
+            <Col id="DEPARTMENT_NAME">경영전략</Col>
+            <Col id="LEVEL">1</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3030</Col>
+            <Col id="DEPARTMENT_NAME">인사총무부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303030</Col>
+            <Col id="DEPARTMENT_NAME">인사총무팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303031</Col>
+            <Col id="DEPARTMENT_NAME">비서팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3031</Col>
+            <Col id="DEPARTMENT_NAME">아토판지아사업부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303132</Col>
+            <Col id="DEPARTMENT_NAME">포브팀/젠틀우프</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303133</Col>
+            <Col id="DEPARTMENT_NAME">제품개발팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303134</Col>
+            <Col id="DEPARTMENT_NAME">인수스/스쿨백</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303135</Col>
+            <Col id="DEPARTMENT_NAME">물류/CS팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303136</Col>
+            <Col id="DEPARTMENT_NAME">경영지원팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3032</Col>
+            <Col id="DEPARTMENT_NAME">FORB USA</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">3033</Col>
+            <Col id="DEPARTMENT_NAME">경영지원부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303337</Col>
+            <Col id="DEPARTMENT_NAME">재경팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303338</Col>
+            <Col id="DEPARTMENT_NAME">무역팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">303339</Col>
+            <Col id="DEPARTMENT_NAME">전산팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">50</Col>
+            <Col id="DEPARTMENT_NAME">김포생산</Col>
+            <Col id="LEVEL">1</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">5050</Col>
+            <Col id="DEPARTMENT_NAME">생산부</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505050</Col>
+            <Col id="DEPARTMENT_NAME">관리팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505051</Col>
+            <Col id="DEPARTMENT_NAME">사출팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">505052</Col>
+            <Col id="DEPARTMENT_NAME">압출팀</Col>
+            <Col id="LEVEL">3</Col>
+          </Row>
+          <Row>
+            <Col id="DPT_PARENT_IDS">5051</Col>
+            <Col id="DEPARTMENT_NAME">신소재개발팀</Col>
+            <Col id="LEVEL">2</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item0" compid="Div00.form.txt_Name" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_NAME"/>
+      <BindItem id="item1" compid="Div00.form.cb_Position" propid="value" datasetid="ds_EMP_INFO" columnid="GRD_ID"/>
+      <BindItem id="item2" compid="Div00.form.txt_Email" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_EMAIL"/>
+      <BindItem id="item3" compid="Div00.form.txt_Phone" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_PHONE"/>
+      <BindItem id="item4" compid="Div00.form.txt_IP_Phone" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_IP_PHONE"/>
+      <BindItem id="item5" compid="Div00.form.cb_Department_1" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_DEPARTMENT1"/>
+      <BindItem id="item6" compid="Div00.form.cb_Department_2" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_DEPARTMENT2"/>
+      <BindItem id="item7" compid="Div00.form.cb_Department_3" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_DEPARTMENT3"/>
+      <BindItem id="item8" compid="Div00.form.cb_UseYN" propid="value" datasetid="ds_EMP_INFO" columnid="EMP_USE_YN"/>
+    </Bind>
+  </Form>
+</FDL>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="listview_search_test" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <ListView id="ListView00" taborder="0" left="263" top="180" width="355" height="240" binddataset="Dataset00">
+          <Formats>
+            <Format id="default">
+              <Band id="body" width="100%" height="34">
+                <Cell id="Cell01" left="10" top="6" width="320" height="24" text="bind:Column0"/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Edit id="Edit00" taborder="1" left="280" top="100" width="230" height="30" onkeyup="Edit00_onkeyup"/>
+        <Static id="Static00" taborder="2" text="enter누르면 검색" left="335" top="30" width="120" height="60"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">a</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">b</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">c</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">d</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">e</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">f</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">g</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">h</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">i</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">j</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">k</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">l</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">m</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">n</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">o</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">p</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">q</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">r</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">s</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">t</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[
+this.Edit00_onkeyup = function(obj:nexacro.Edit,e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13)
+	{
+		trace(this.Dataset00.findRow("Column0", obj.value));
+		this.Dataset00.set_rowposition(this.Dataset00.findRow("Column0", obj.value));
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

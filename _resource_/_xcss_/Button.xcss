@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Button.styled
+{
+	border-radius : 25px;
+	-nexa-border : 2px solid white;
+	background : transparent;
+}
+.Button.styled[userstatus=pushed]
+{
+	-nexa-border : 0px solid white;
+}
+.Button.styled[userstatus=selected]
+{
+	-nexa-border : 0px solid white;
+}
+.Button.login
+{
+	border-radius : 25px;
+	background : transparent;
+}
+.Button.login[status=disabled]
+{
+	border-radius : 25px;
+	background : transparent;
+}
+.Button.login[status=mouseover]
+{
+	border-radius : 25px;
+	-nexa-border : 2px solid white;
+	background : transparent;
+}
+.Button.login[userstatus=pushed]
+{
+	border-radius : 25px;
+	background : transparent;
+}
+.Button.login[userstatus=selected]
+{
+	border-radius : 25px;
+	background : transparent;
+}
+]]></XCSS>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XCSS version="1.0"><![CDATA[.Edit.styled
+{
+	-nexa-border : 5px solid transparent,5px solid transparent,1px solid darkgray;
+	background : transparent;
+	font : normal 10pt/1 "Arial";
+}
+.Edit.styled[status=mouseover]
+{
+	-nexa-border : 5px solid transparent,5px solid transparent,1px solid darkgray;
+	background : transparent;
+	font : normal 10pt/1 "Arial";
+}
+.Edit.styled[status=focused]
+{
+	-nexa-border : 5px solid transparent,5px solid transparent,1px solid darkgray;
+	background : transparent;
+	font : normal 10pt/1 "Arial";
+}
+.Edit.styled[status=readonly]
+{
+	-nexa-border : 5px solid transparent,5px solid transparent,1px solid darkgray;
+	background : transparent;
+	font : normal 10pt/1 "Arial";
+}
+.Edit.styled[status=disabled]
+{
+	-nexa-border : 5px solid transparent,5px solid transparent,1px solid darkgray;
+	background : transparent;
+	font : normal 10pt/1 "Arial";
+}
+]]></XCSS>

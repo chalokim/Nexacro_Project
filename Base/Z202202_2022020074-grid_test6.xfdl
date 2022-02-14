@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="grid_test6" width="1280" height="720" titletext="New Form" onload="grid_test6_onload">
+    <Layouts>
+      <Layout height="720" width="1280">
+        <Grid id="Grid00" taborder="0" left="175" top="73" width="375" height="270" binddataset="Dataset00" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="Column0"/>
+                <Cell col="1" text="Column1"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:Column0"/>
+                <Cell col="1" text="bind:Column1"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="Dataset00">
+        <ColumnInfo>
+          <Column id="Column0" type="STRING" size="256"/>
+          <Column id="Column1" type="STRING" size="256"/>
+          <Column id="Key1" type="STRING" size="256"/>
+          <Column id="Key2" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Column0">A</Col>
+            <Col id="Key1">1000</Col>
+            <Col id="Key2">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">C</Col>
+            <Col id="Key1">1001</Col>
+            <Col id="Key2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">D</Col>
+            <Col id="Key1">1002</Col>
+            <Col id="Key2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">E</Col>
+            <Col id="Key1">1003</Col>
+            <Col id="Key2">1000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">B</Col>
+            <Col id="Key1">2000</Col>
+            <Col id="Key2">0</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">F</Col>
+            <Col id="Key1">2001</Col>
+            <Col id="Key2">2000</Col>
+          </Row>
+          <Row>
+            <Col id="Column0">G</Col>
+            <Col id="Key1">2002</Col>
+            <Col id="Key2">2000</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+
+};
+
+
+
+this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
+{
+};
+
+
+]]></Script>
+  </Form>
+</FDL>

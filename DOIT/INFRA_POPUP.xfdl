@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="INFRA_POPUP" width="960" height="840" titletext="New Form">
+    <Layouts>
+      <Layout height="840" width="960">
+        <Div id="Div00" taborder="0" text="Div00" left="10" top="40" width="940" height="230">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="장비명" left="61" top="26" width="60" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME" taborder="1" left="161" top="23" width="247" height="28"/>
+              <Static id="Static00_00" taborder="2" text="관리번호" left="41" top="130" width="80" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME00" taborder="3" left="161" top="74" width="247" height="28"/>
+              <Static id="Static00_01_01_00" taborder="4" text="모델명" left="61" top="78" width="60" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME00_00" taborder="5" left="161" top="128" width="247" height="28"/>
+              <Static id="Static00_01" taborder="6" text="위 치" left="75" top="182" width="46" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME00_00_00" taborder="7" left="161" top="179" width="247" height="28"/>
+              <Button id="Button00" taborder="8" text="사진 1" left="437" top="19" width="465" height="192"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div01" taborder="1" text="Div01" left="10" top="280" width="940" height="268">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01_00" taborder="0" text="OS" left="110" top="37" width="28" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00" taborder="1" text="Hostname" left="51" top="89" width="87" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_00" taborder="2" text="IP" left="120" top="141" width="18" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01" taborder="3" text="공급사" left="572" top="34" width="60" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01_00" taborder="4" text="도입연도" left="552" top="86" width="80" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01" taborder="5" text="OS 라이선스" left="519" top="138" width="113" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00" taborder="6" text="시스템 사양" left="34" top="193" width="106" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME" taborder="7" left="167" top="34" width="247" height="28"/>
+              <Edit id="txt_CT_NAME00" taborder="8" left="167" top="86" width="247" height="28" onchanged="Div01_txt_CT_NAME00_onchanged"/>
+              <Edit id="txt_CT_NAME01" taborder="9" left="167" top="135" width="247" height="28"/>
+              <Edit id="txt_CT_NAME02" taborder="10" left="655" top="34" width="247" height="28"/>
+              <Edit id="txt_CT_NAME03" taborder="11" left="655" top="86" width="247" height="28"/>
+              <Edit id="txt_CT_NAME04" taborder="12" left="655" top="135" width="247" height="28"/>
+              <TextArea id="TextArea00" taborder="13" left="167" top="193" width="735" height="46"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="Div02" taborder="2" text="Div02" left="10" top="560" width="940" height="200">
+          <Layouts>
+            <Layout>
+              <Static id="Static00_01_01_00_00_00" taborder="0" text="유지보수 업체" left="78" top="31" width="126" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01_00_00_00" taborder="1" text="무상 유지보수 기간" left="33" top="87" width="171" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01_00_00" taborder="2" text="유지보수 기간" left="79" top="142" width="126" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01_00_00_00_00_00" taborder="3" text="백신여부" left="585" top="81" width="80" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Static id="Static00_01_01_00_00_00_00_01_00_00_00_00" taborder="4" text="담당자 연락처" left="539" top="31" width="126" height="22" font="14pt/normal &quot;Arial&quot;,&quot;굴림체&quot;"/>
+              <Edit id="txt_CT_NAME" taborder="5" left="237" top="30" width="247" height="28"/>
+              <Edit id="txt_CT_NAME00" taborder="6" left="237" top="84" width="247" height="28"/>
+              <Edit id="txt_CT_NAME01" taborder="7" left="238" top="139" width="247" height="28"/>
+              <Edit id="txt_CT_NAME02" taborder="8" left="689" top="78" width="210" height="28"/>
+              <Edit id="txt_CT_NAME03" taborder="9" left="689" top="28" width="210" height="28"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="3" text="인프라 정보" left="10" top="7" width="112" height="23" font="bold 15pt/normal &quot;Arial&quot;"/>
+        <Button id="bt_SAVE" taborder="4" text="확 인" left="270" top="780" width="100" height="40" font="14pt &quot;Arial&quot;" onclick="bt_SAVE_onclick"/>
+        <Button id="bt_CANCEL" taborder="5" text="취 소" left="596" top="780" width="100" height="40" onclick="bt_CANCEL_onclick" font="14pt &quot;Arial&quot;"/>
+      </Layout>
+    </Layouts>
+    <Bind>
+      <BindItem id="item2" compid="Div00.form.txt_CT_NAME" propid="value" datasetid="ds_Infra" columnid="NAME"/>
+      <BindItem id="item3" compid="Div00.form.txt_CT_NAME00" propid="value" datasetid="ds_Infra" columnid="M_NAME"/>
+      <BindItem id="item0" compid="Div00.form.txt_CT_NAME00_00" propid="value" datasetid="ds_Infra" columnid="S_NUM"/>
+      <BindItem id="item1" compid="Div00.form.txt_CT_NAME00_00_00" propid="value" datasetid="ds_Infra" columnid="LOCATION"/>
+      <BindItem id="item4" compid="Div01.form.txt_CT_NAME" propid="value" datasetid="ds_Infra" columnid="OS"/>
+      <BindItem id="item5" compid="Div01.form.txt_CT_NAME00" propid="value" datasetid="ds_Infra" columnid="HOSTNAME"/>
+      <BindItem id="item6" compid="Div01.form.txt_CT_NAME01" propid="value" datasetid="ds_Infra" columnid="IP"/>
+      <BindItem id="item7" compid="Div01.form.txt_CT_NAME02" propid="value" datasetid="ds_Infra" columnid="SUPPLY_CO"/>
+      <BindItem id="item8" compid="Div01.form.txt_CT_NAME03" propid="value" datasetid="ds_Infra" columnid="YEAR"/>
+      <BindItem id="item9" compid="Div01.form.txt_CT_NAME04" propid="value" datasetid="ds_Infra" columnid="LICENSE"/>
+      <BindItem id="item11" compid="Div02.form.txt_CT_NAME" propid="value" datasetid="ds_Infra" columnid="MN_COMPANY"/>
+      <BindItem id="item12" compid="Div02.form.txt_CT_NAME00" propid="value" datasetid="ds_Infra" columnid="FREE_MN_PERIOD"/>
+      <BindItem id="item13" compid="Div02.form.txt_CT_NAME01" propid="value" datasetid="ds_Infra" columnid="MN_PERIOD"/>
+      <BindItem id="item14" compid="Div02.form.txt_CT_NAME02" propid="value" datasetid="ds_Infra" columnid="VACC_INFO"/>
+      <BindItem id="item15" compid="Div02.form.txt_CT_NAME03" propid="value" datasetid="ds_Infra" columnid="MANAGER"/>
+      <BindItem id="item10" compid="Div01.form.TextArea00" propid="value" datasetid="ds_Infra" columnid="SPECS"/>
+    </Bind>
+    <Script type="xscript5.1"><![CDATA[
+this.bt_CANCEL_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+
+this.bt_SAVE_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.close();
+};
+]]></Script>
+  </Form>
+</FDL>

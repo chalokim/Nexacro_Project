@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.0">
+  <Form id="listviewcomp" width="1080" height="520" titletext="New Form" onload="listviewcomp_onload">
+    <Layouts>
+      <Layout height="520" mobileorientation="landscape" width="1080">
+        <ListView id="ListView00" taborder="0" left="10" top="100" binddataset="lists" border="1px solid #b7b1b2" formatid="format01" visible="true" height="410" width="800" cssclass="lstkangwondo">
+          <Formats>
+            <Format id="format00">
+              <Band id="body" width="385" height="300">
+                <Cell id="Cell01" left="3" top="3" height="194" text="bind:Image" displaytype="imagecontrol" cssclass="lv_WF_img" right="3" imagestretch="fit"/>
+                <Cell id="Cell03" left="5" top="197" height="30" text="bind:Title" cssclass="lv_WF_titleLine2" right="1"/>
+                <Cell id="Cell05" left="10" top="10" height="25" text="bind:Area" cssclass="lv_WF_areatag" width="100"/>
+                <Cell id="Cell07" top="10" height="25" text="bind:Kind" cssclass="lv_WF_typetag" right="10" width="100"/>
+                <Cell id="Cell09" left="5" top="240" text="bind:Explain" cssclass="lv_WF_explain" right="5" bottom="6"/>
+              </Band>
+            </Format>
+            <Format id="format01">
+              <Band id="body" width="100%" height="100">
+                <Cell id="Cell03" left="5" top="6" text="bind:Title" width="355" cssclass="lv_WF_titleLine" height="40"/>
+                <Cell id="Cell05" top="2" text="bind:Area" cssclass="lv_WF_subtitleLine" height="98" right="100" width="68"/>
+                <Cell id="Cell07" top="2" text="bind:Kind" cssclass="lv_WF_subtitleLine" right="170" width="68" bottom="0"/>
+                <Cell id="Cell09" left="5" top="40" text="bind:Explain" wordWrap="english" verticalAlign="top" width="525" cssclass="lv_WF_subLine" bottom="0"/>
+                <Cell id="Cell00" top="2" displaytype="imagecontrol" text="bind:Image" right="2" width="98" bottom="2"/>
+                <Cell id="Cell01" left="373" top="50" wordWrap="english" verticalAlign="top" cssclass="lv_WF_subLine" bottom="0" right="0" text=""/>
+              </Band>
+            </Format>
+          </Formats>
+        </ListView>
+        <Button id="btnPC" taborder="1" text="List" left="15" top="15" width="91" height="31" onclick="Button01_onclick" visible="true"/>
+        <Button id="btnMobile" taborder="2" text="Tile" left="111" top="15" width="91" height="31" onclick="Button01_onclick" visible="true"/>
+        <Static id="Static00" taborder="3" left="10" top="71" width="800" height="29" border="1px solid #b7b1b2" background="#b7b1b2"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="lists">
+        <ColumnInfo>
+          <Column id="Image" type="STRING" size="256"/>
+          <Column id="Title" type="STRING" size="256"/>
+          <Column id="Area" type="STRING" size="256"/>
+          <Column id="Kind" type="STRING" size="256"/>
+          <Column id="Explain" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="Title">남애어촌체험마을</Col>
+            <Col id="Area">양양군</Col>
+            <Col id="Kind">체험마을</Col>
+            <Col id="Explain">강원 3대 미항의 하나인 남애항을 둘러싸고 옹기종기 모여 사는 아담한 어촌마을이다. 7번 국도와 연접하여 수산물직거래 수송이 원활하다.</Col>
+            <Col id="Image">image::img1.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">꿈자람 어린이공원</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">공원</Col>
+            <Col id="Explain">꿈자람 어린이공원은 1층과 2층으로 된 실내 키즈파크와 실외 키즈파크를 동시에 이용할 수 있는 키즈 어드벤처 공원이다.</Col>
+            <Col id="Image">image::img2.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">춘천지구 전적비</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">유적</Col>
+            <Col id="Explain">한국전쟁 때 국군 6사단이 치열한 방어전을 펼쳤던 춘천지구전투를 기념하기 위해 만든 전적비이다.</Col>
+            <Col id="Image">image::img3.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">춘천내평전투 호국경찰추모상</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">문화</Col>
+            <Col id="Explain">6.25전쟁 첫 대승을 거둔 춘천지구 전투의 초석을 다진 고 노종해 경감 등 호국영웅 11인을 추모하는 동상이다.</Col>
+            <Col id="Image">image::img4.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">레일바이크</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">레저스포츠</Col>
+            <Col id="Explain">멈춰버린 경춘선에 새로운 생명을 불어넣어 달리고 있는, 강촌레일파크는 국내 최대, 최장의 레일바이크 관광지이다.</Col>
+            <Col id="Image">image::img5.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">등명해변</Col>
+            <Col id="Area">강릉시</Col>
+            <Col id="Kind">해변</Col>
+            <Col id="Explain">강동면 정동진리 일원에 있는 등명해변은 길이 800m, 2만4천 제곱미터의 백사장이 있고 넓은 주차장과 소나무 숲이 우거져 있는 곳이다.</Col>
+            <Col id="Image">image::img6.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">강촌 하늘아래 글램핑</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">캠핑장</Col>
+            <Col id="Explain">강촌은 춘천의 초입이며 낭만과 젊음에 상징적인 관광지이다. 서울에서 한시간 거리에 위치하여 접근성이 용이하다.</Col>
+            <Col id="Image">image::img7.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">애니메이션박물관</Col>
+            <Col id="Area">춘천시</Col>
+            <Col id="Kind">박물관</Col>
+            <Col id="Explain">강원도 춘천시 서면에 위치한 애니메이션 전문 박물관. 국내 최초의 애니메이션 박물관이며, 애니메이션을 전문적으로 다루는 곳이다.</Col>
+            <Col id="Image">image::img8.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">망상오토캠핑리조트</Col>
+            <Col id="Area">동해시</Col>
+            <Col id="Kind">캠핑장</Col>
+            <Col id="Explain">국내 최초로 조성된 자동차전용캠핑장으로 울창한 송림과 깨끗한 백사장, 맑은 비취빛 푸른 바다가 어우러진 자연친화적이다.</Col>
+            <Col id="Image">image::img9.png</Col>
+          </Row>
+          <Row>
+            <Col id="Title">고적대</Col>
+            <Col id="Area">정선군</Col>
+            <Col id="Kind">산</Col>
+            <Col id="Explain">정선군 임계면에 위치한 고적대는 동해시, 삼척시, 정선군의 분수령을 이루는 산으로 기암절벽이 대를 이루어 신라 고승 의상대사가 수행하였다고 전해지고 있다.</Col>
+            <Col id="Image">image::img10.png</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[this.listviewcomp_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+{
+	this.btnPC.opt = "format01";
+	this.btnMobile.opt = "format00";
+};
+
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (obj.opt == "format00")
+	{
+		this.ListView00.set_formatid("format00");
+	}
+	else
+	{
+		this.ListView00.set_formatid("format01");
+	}
+};
+]]></Script>
+  </Form>
+</FDL>

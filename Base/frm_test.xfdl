@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="frm_test" width="500" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="500" stepcount="3">
+        <Button id="Button00" taborder="0" text="Button00" left="110" top="45" width="120" height="50"/>
+        <Button id="Button00_00" taborder="1" text="Button00" left="40" top="40" width="120" height="50" positionstep="1"/>
+        <Button id="Button00_00_00" taborder="2" text="Button00" left="40" top="40" width="120" height="50" positionstep="2"/>
+        <MaskEdit id="MaskEdit00" taborder="3" left="64" top="190" width="326" height="68" value="12345678" format="######-#{######}" type="string"/>
+        <Radio id="Radio00" taborder="4" left="46" top="264" width="280" height="50"/>
+        <Button id="Button00_01" taborder="5" text="Button00" left="30" top="395" width="120" height="50"/>
+        <Button id="Button00_02" taborder="6" text="Button00" left="153" top="405" width="120" height="50"/>
+        <Button id="Button00_03" taborder="7" text="Button00" left="276" top="415" width="120" height="50"/>
+        <Button id="Button00_04" taborder="8" text="Button00" left="399" top="425" width="120" height="50"/>
+        <Button id="Button00_05" taborder="9" text="Button00" left="22" top="435" width="120" height="50" positionstep="1"/>
+        <Button id="Button00_06" taborder="10" text="Button00" left="145" top="445" width="120" height="50" positionstep="1"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
