@@ -74,17 +74,62 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+    <Script type="xscript5.1"><![CDATA[
+this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
-
+	this.Dataset00.filter("Column0 == 'A' || Column0 == 'B'");
 };
 
+var chkA = 0;
+var chkB = 0;
 
 
 this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
+	switch(this.Dataset00.getColumn(e.row, "Column0")) 
+	{
+		case 'A':
+			trace(chkA);
+			if(chkA == 0 && chkB == 0)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'C' || Column0 == 'D' || Column0 == 'E'");
+				chkA = 1;
+			} else if(chkA == 1 && chkB == 0)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B'");
+				chkA = 0;
+			} else if(chkA == 0 && chkB == 1)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'C' || Column0 == 'D' || Column0 == 'E' || Column0 == 'F' || Column0 == 'G'");
+				chkA = 1;
+			} else if(chkA == 1 && chkB == 1)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'F' || Column0 == 'G'");
+				chkA = 0;
+			}
+			break;
+		case 'B':
+			trace(chkB);
+			if(chkA == 0 && chkB == 0)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'F' || Column0 == 'G'");
+				chkB = 1;
+			} else if(chkA == 1 && chkB == 0)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'C' || Column0 == 'D' || Column0 == 'E' || Column0 == 'F' || Column0 == 'G'");
+				chkB = 1;
+			} else if(chkA == 0 && chkB == 1)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B'");
+				chkB = 0;
+			} else if(chkA == 1 && chkB == 1)
+			{
+				this.Dataset00.filter("Column0 == 'A' || Column0 == 'B' || Column0 == 'C' || Column0 == 'D' || Column0 == 'E'");
+				chkB = 0;
+			}
+			break;
+	}
 };
-
 
 ]]></Script>
   </Form>
