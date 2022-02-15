@@ -3,34 +3,38 @@
   <Form id="grid_test6" width="1280" height="720" titletext="New Form" onload="grid_test6_onload">
     <Layouts>
       <Layout height="720" width="1280">
-        <Grid id="Grid00" taborder="0" left="175" top="73" width="375" height="270" binddataset="Dataset00" oncelldblclick="Grid00_oncelldblclick" onexpanddown="Grid00_onexpanddown">
+        <Grid id="Grid00" taborder="0" left="175" top="73" width="375" height="270" binddataset="Dataset00" oncelldblclick="Grid00_oncelldblclick">
           <Formats>
             <Format id="default">
               <Columns>
+                <Column size="48"/>
                 <Column size="80"/>
                 <Column size="80"/>
                 <Column size="80"/>
                 <Column size="80"/>
               </Columns>
               <Rows>
-                <Row band="head" size="24"/>
+                <Row size="24" band="head"/>
                 <Row size="24"/>
               </Rows>
               <Band id="head">
-                <Cell text="Column0"/>
-                <Cell col="1" text="Column1"/>
-                <Cell col="2" text="Key1"/>
-                <Cell col="3" text="Key2"/>
+                <Cell text="chk"/>
+                <Cell col="1" text="Column0"/>
+                <Cell col="2" text="Column1"/>
+                <Cell col="3" text="Key1"/>
+                <Cell col="4" text="Key2"/>
               </Band>
               <Band id="body">
-                <Cell text="bind:Column0"/>
-                <Cell col="1" text="bind:Column1"/>
-                <Cell col="2" text="bind:Key1"/>
-                <Cell col="3" text="bind:Key2"/>
+                <Cell displaytype="checkboxcontrol"/>
+                <Cell col="1" text="bind:Column0"/>
+                <Cell col="2" text="bind:Column1"/>
+                <Cell col="3" text="bind:Key1"/>
+                <Cell col="4" text="bind:Key2"/>
               </Band>
             </Format>
           </Formats>
         </Grid>
+        <Button id="Button00" taborder="1" text="Button00" left="595" top="144" width="412" height="107" onclick="Button00_onclick"/>
       </Layout>
     </Layouts>
     <Objects>
@@ -80,20 +84,52 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.nFilterStr = " typeof(Key1) == 'string' && Key1.indexOf('000') > -1 ";
+
+this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.Dataset00.filter("typeof(Key1) == 'string' && Key1.indexOf('000') > -1")
 };
 
+var chkA = 0;
+var chkB = 0;
 
 this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
  	var Vkey1 = this.Dataset00.getColumn(e.row, "Key1");
  	var Vkey2 = this.Dataset00.getColumn(e.row, "Key2");
+
+	var SliceVKey1 = Vkey1.substring(0, 1);
+	var SliceVKey2 = Vkey2.substring(0, 1);	
 	
-	alert(Vkey1)
-	alert(Vkey2)
- 	this.Dataset00.filter(" typeof(Key1) == 'string' && Key1.indexOf('000') > -1 || Key2 == '" + Vkey1 + "'");		
+	if(chkA == 0){	
+		this.nFilterStr =  this.nFilterStr + "|| Key2 == '" +Vkey1 + "'";
+		this.Dataset00.filter(this.nFilterStr);	
+		chkA = 1;
+	}
+	else if(chkA == 1){	
+		var reg = new RegExp("'" + Vkey1 + "'", "g");
+		this.nFilterStr = this.nFilterStr.replace(reg, "''")
+		this.Dataset00.filter(this.nFilterStr);
+		chkA = 0;
+ 	}
+};
+
+
+
+
+
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	if (chkA == 0){
+		this.Dataset00.filter("");
+		chkA = 1;
+
+	}
+	else if (chkA = 1){
+		this.Dataset00.filter("typeof(Key1) == 'string' && Key1.indexOf('000') > -1")
+		chkA = 0;
+	}
 };
 ]]></Script>
   </Form>

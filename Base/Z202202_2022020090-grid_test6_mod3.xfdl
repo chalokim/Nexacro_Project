@@ -3,10 +3,11 @@
   <Form id="grid_test6" width="1280" height="720" titletext="New Form" onload="grid_test6_onload">
     <Layouts>
       <Layout height="720" width="1280">
-        <Grid id="Grid00" taborder="0" left="175" top="73" width="375" height="270" binddataset="Dataset00" oncelldblclick="Grid00_oncelldblclick" onexpanddown="Grid00_onexpanddown">
+        <Grid id="Grid00" taborder="0" left="175" top="73" width="535" height="270" binddataset="Dataset00" oncelldblclick="Grid00_oncelldblclick">
           <Formats>
             <Format id="default">
               <Columns>
+                <Column size="80"/>
                 <Column size="80"/>
                 <Column size="80"/>
                 <Column size="80"/>
@@ -21,12 +22,14 @@
                 <Cell col="1" text="Column1"/>
                 <Cell col="2" text="Key1"/>
                 <Cell col="3" text="Key2"/>
+                <Cell col="4" text="filterYN"/>
               </Band>
               <Band id="body">
                 <Cell text="bind:Column0"/>
                 <Cell col="1" text="bind:Column1"/>
                 <Cell col="2" text="bind:Key1"/>
                 <Cell col="3" text="bind:Key2"/>
+                <Cell col="4" text="bind:filterYN"/>
               </Band>
             </Format>
           </Formats>
@@ -40,12 +43,14 @@
           <Column id="Column1" type="STRING" size="256"/>
           <Column id="Key1" type="STRING" size="256"/>
           <Column id="Key2" type="STRING" size="256"/>
+          <Column id="filterYN" type="STRING" size="256"/>
         </ColumnInfo>
         <Rows>
           <Row>
             <Col id="Column0">A</Col>
             <Col id="Key1">1000</Col>
             <Col id="Key2">0</Col>
+            <Col id="filterYN">N</Col>
           </Row>
           <Row>
             <Col id="Column0">C</Col>
@@ -66,6 +71,7 @@
             <Col id="Column0">B</Col>
             <Col id="Key1">2000</Col>
             <Col id="Key2">0</Col>
+            <Col id="filterYN">N</Col>
           </Row>
           <Row>
             <Col id="Column0">F</Col>
@@ -80,21 +86,72 @@
         </Rows>
       </Dataset>
     </Objects>
-    <Script type="xscript5.1"><![CDATA[this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
+    <Script type="xscript5.1"><![CDATA[this.nFilterStrOrg = " typeof(Key1) == 'string' && Key1.indexOf('000') > -1 ";
+this.nFilterStr = "";
+
+this.grid_test6_onload = function(obj:nexacro.Form,e:nexacro.LoadEventInfo)
 {
 	this.Dataset00.filter("typeof(Key1) == 'string' && Key1.indexOf('000') > -1")
 };
 
+// var chkA = 0;
+// var chkB = 0;
 
 this.Grid00_oncelldblclick = function(obj:nexacro.Grid,e:nexacro.GridClickEventInfo)
 {
- 	var Vkey1 = this.Dataset00.getColumn(e.row, "Key1");
- 	var Vkey2 = this.Dataset00.getColumn(e.row, "Key2");
+
+	var nFilerAdd="";
 	
-	alert(Vkey1)
-	alert(Vkey2)
- 	this.Dataset00.filter(" typeof(Key1) == 'string' && Key1.indexOf('000') > -1 || Key2 == '" + Vkey1 + "'");		
+	if(this.Dataset00.getColumn(e.row,"filterYN") == "N"){
+		this.Dataset00.setColumn(e.row,"filterYN","Y");
+	
+	}else{
+		this.Dataset00.setColumn(e.row,"filterYN","N");
+	}
+	
+		for(var i=0; i < this.Dataset00.rowcount;i++){
+			if(this.Dataset00.getColumn(i,"Key2") == 0){
+			trace(this.Dataset00.getColumn(i,"filterYN") );
+				if(this.Dataset00.getColumn(i,"filterYN") == "Y"){
+					nFilerAdd = nFilerAdd + "|| Key2 == '" +this.Dataset00.getColumn(i,"Key1") + "'";
+				}
+			}
+		}
+		this.nFilterStr =  this.nFilterStrOrg + nFilerAdd;
+		trace(this.nFilterStr);
+		this.Dataset00.filter(this.nFilterStr);	
+//  
+// 	var Vkey1 = this.Dataset00.getColumn(e.row, "Key1");
+// 	var Vkey2 = this.Dataset00.getColumn(e.row, "Key2");
+// 	var SliceVKey1 = Vkey1.substring(0, 1);
+// 	var SliceVKey2 = Vkey2.substring(0, 1);	
+// 	
+// 	if (chkA == 0 && chkB == 0){
+// 		this.nFilterStr =  this.nFilterStr + "|| Key2 == '" +Vkey1 + "'";
+// 		this.Dataset00.filter(this.nFilterStr);	
+// 		chkA = 1;
+// 		chkB = 0;
+// 	}
+// 	
+// 	else if (chkA == 1 && chkB == 0){
+// 		this.nFilterStr =  this.nFilterStr + "|| Key2 == '" +Vkey1 + "'";
+// 		this.Dataset00.filter(this.nFilterStr);	
+// 		chkA = 1;
+// 		chkB = 1;
+// 	}
+// 	
+// 	else if (chkA == 1 && chkB == 1){
+// 			for(i = 0; i < this.Dataset00.getRowCount("Key2"); i++){	
+// 				var cRow = this.Dataset00.getColumn(i, "Key1");
+// 				if (cRow.match(SliceVKey2)){
+// 					alert(cRow)
+// 				}
+// 		}
+// 	}
+	
+
 };
+
 ]]></Script>
   </Form>
 </FDL>
